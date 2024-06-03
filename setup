@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Set CURRENT_PATH to the current working directory
+CURRENT_PATH=$(pwd)
+
+# Source the oe-init-build-env script
+source $CURRENT_PATH/srcs/poky/oe-init-build-env
