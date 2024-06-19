@@ -27,14 +27,14 @@ verbose_output "Switched to $(pwd)"
 source oe-init-build-env
 verbose_output "Sourced the oe-init-build-env script"
 
+# Add the  meta-evm and meta-confidential-compute layers to bblayers.conf
+bitbake-layers add-layer ../meta-evm
+bitbake-layers add-layer ../meta-confidential-compute
+verbose_output "Added the meta-evm and meta-confidential-compute layers to bblayers.conf"
+
 # Return to the original directory
 popd
 verbose_output "Returned to $(pwd)"
-
-# Replace all occurrences of "/home/ubuntu/moe/poky" and "/home/ubuntu/poky" with "$CURRENT_PATH/srcs/poky" in patch-bblayers.conf
-sed -i "s|/home/ubuntu/moe/poky|$CURRENT_PATH/srcs/poky|g" $CURRENT_PATH/srcs/yocto-scripts/patches/patch-bblayers.conf
-sed -i "s|/home/ubuntu/poky|$CURRENT_PATH/srcs/poky|g" $CURRENT_PATH/srcs/yocto-scripts/patches/patch-bblayers.conf
-verbose_output "Replaced all occurrences of \"/home/ubuntu/moe/poky\" and \"/home/ubuntu/poky\" with \"$CURRENT_PATH/srcs/poky\" in patch-bblayers.conf"
 
 # Apply patches
 for patch in $CURRENT_PATH/srcs/yocto-scripts/patches/patch-*; do
