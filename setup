@@ -48,6 +48,6 @@ for patch in $CURRENT_PATH/srcs/yocto-scripts/patches/patch-*; do
     verbose_output "Processing patch file $patch"
 
     # Apply the patch to the corresponding file in srcs/poky/build/conf/
-    patch $CURRENT_PATH/srcs/poky/build/conf/$filename -i $patch
+    patch -N $CURRENT_PATH/srcs/poky/build/conf/$filename -i $patch
     verbose_output "Applied patch to $CURRENT_PATH/srcs/poky/build/conf/$filename"
 done
