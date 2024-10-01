@@ -27,7 +27,7 @@ verbose_output "Switched to $(pwd)"
 source oe-init-build-env
 verbose_output "Sourced the oe-init-build-env script"
 
-# Add the  meta-evm, meta-confidential-compute, meta-secure-core/meta-tpm2, meta-openembedded/meta-python, meta-openembedded/meta-oe layers meta-rust-bin meta-clang to bblayers.conf
+# Add the  meta-evm, meta-confidential-compute, meta-secure-core/meta-tpm2, meta-openembedded/meta-python, meta-openembedded/meta-oe layers meta-rust-bin meta-clang meta-observability to bblayers.conf
 bitbake-layers add-layer ../meta-evm
 bitbake-layers add-layer ../meta-confidential-compute
 bitbake-layers add-layer ../meta-openembedded/meta-oe
@@ -35,6 +35,7 @@ bitbake-layers add-layer ../meta-openembedded/meta-python
 bitbake-layers add-layer ../meta-secure-core/meta-tpm2
 bitbake-layers add-layer ../meta-rust-bin
 bitbake-layers add-layer ../meta-clang
+bitbake-layers add-layer ../meta-observability
 
 verbose_output "Added the meta-evm and meta-confidential-compute layers to bblayers.conf"
 
